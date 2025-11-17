@@ -17,3 +17,23 @@ def get_character_count(text):
     
 
     return chara_dict
+
+def sort_on(items):
+    return items["num"]
+
+def sort_dict(dict):
+    dict_list = []
+    sorted_dict = {}
+
+    for c in dict:
+        if c.isalpha() == True:
+            temp_dict = {}
+            temp_dict["chara"] = c
+            temp_dict["num"] = dict[c]
+            dict_list.append(temp_dict)
+    dict_list.sort(reverse=True, key=sort_on)
+    
+    for dict in dict_list:
+        sorted_dict[dict["chara"]] = dict["num"]
+    
+    return sorted_dict
